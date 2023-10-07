@@ -15,7 +15,10 @@ class IconPicker extends Picker {
   selectItem(item, trigger) {
     super.selectItem(item, trigger);
     item = item || this.defaultItem;
-    this.label.innerHTML = item.innerHTML;
+    if (item != null && this.label != null) {
+      if (this.label.innerHTML === item.innerHTML) return;
+      this.label.innerHTML = item.innerHTML;
+    }
   }
 }
 
